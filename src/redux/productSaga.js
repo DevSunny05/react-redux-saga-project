@@ -4,6 +4,7 @@ import { PRODUCT_LIST, SET_PRODUCT_LIST } from './constant';
 function* getProducts(){
      let data=yield fetch('http://localhost:3500/product')
     data=yield data.json()
+    console.log('saga is called')
     yield put({type:SET_PRODUCT_LIST,data})
     
 }

@@ -6,7 +6,7 @@ export const productData = (data = [], action) => {
     
     case SET_PRODUCT_LIST:
       // add to cart logic
-      return [...data, action.data];
+      return [...action.data];
 
     default:
       return data;

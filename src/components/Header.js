@@ -6,7 +6,7 @@ const Header = () => {
   const cartData = useSelector((state) => state.cartData);
  
   return (
-    <div style={{ height: "75px", backgroundColor: "gray" }}>
+    <div className=" bg-gradient-to-r from-slate-900 to-slate-500 " style={{ height: "75px",  }}>
       <div style={{ float: "right", margin: "25px", position: "relative" }}>
         <span
           style={{
