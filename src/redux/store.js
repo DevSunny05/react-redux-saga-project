@@ -6,6 +6,7 @@ import createSagaMiddleware from 'redux-saga'
 
 
 const sagaMiddleware =createSagaMiddleware()
+
 const store=configureStore(
    {
     reducer: rootReducer,
@@ -13,5 +14,5 @@ const store=configureStore(
    }
 )
 
-sagaMiddleware.run(productSaga)
+sagaMiddleware.run(productSaga,console.log('store is called 2') )
 export default store;

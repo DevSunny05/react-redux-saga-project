@@ -20,18 +20,13 @@ const Main = () => {
   };
   return (
     <>
-      {/* <div className="d-flex ">
-        <button onClick={() => dispatch(addToCart(product))}>
-          Add To cart
-        </button>
-        <button onClick={() => dispatch(removeFromCart(product.name))}>
-          Remove from cart
-        </button>
+      <div className="d-flex ">
+       
         <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
         <button onClick={() => dispatch(productList())}>
           Get Product List
         </button>
-      </div> */}
+      </div>
       <div className="container d-flex  justify-center items-center ">
         {data.map((item) => (
           <div className="card m-auto my-4 p-2 w-60 bg-slate-100 border-2 border-inherit rounded d-flex flex-col justify-center items-center ">
