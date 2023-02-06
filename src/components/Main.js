@@ -32,18 +32,18 @@ const Main = () => {
           Get Product List
         </button>
       </div> */}
-      <div className="d-flex flex-col justify-center items-center ">
+      <div className="container d-flex  justify-center items-center ">
         {data.map((item) => (
-          <div className="m-auto my-4 p-1.5 w-44  bg-slate-50 border-solid border-gray-500 ">
-            <img key={item.id} src={item.image} alt={item.id} />
+          <div className="card m-auto my-4 p-2 w-60 bg-slate-100 border-2 border-inherit rounded d-flex flex-col justify-center items-center ">
+            <img key={item.id} src={item.image} alt={item.id} className=" object-contain w-52 h-52"/>
             <div>Name: {item.name}</div>
             <div>Color: {item.color}</div>
             <div>Brand: {item.brand}</div>
             <div>Category: {item.category}</div>
             <div>Price: {item.price}</div>
-            <div>
-                <button>Add To Cart</button>
-                <button>Add To Cart</button>
+            <div className="d-flex flex-col items-center justify-center w-full">
+                <button onClick={() => dispatch(addToCart(product))} className="mx-auto  my-2 px-4 py-1 bg-cyan-700 rounded text-white w-40">Add To Cart</button>
+                <button onClick={() => dispatch(removeFromCart(product.name))} className="mx-auto my-2 px-4 py-1 bg-cyan-700 rounded text-white w-40">Remove To Cart</button>
             </div>
           </div>
         ))}
@@ -53,3 +53,5 @@ const Main = () => {
 };
 
 export default Main;
+
+// json-server --watch db.json
