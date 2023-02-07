@@ -10,6 +10,7 @@ const Main = () => {
 
   useEffect(()=>{
     dispatch(productList())
+    // eslint-disable-next-line
   },[])
 
   
@@ -17,7 +18,7 @@ const Main = () => {
     <>
       <div className="d-flex ">
        
-        <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
+        <button className="  my-2 px-4 py-1 bg-cyan-700 rounded text-white w-40" onClick={() => dispatch(emptyCart()) }>Empty cart</button>
 
       </div>
       <div className="container d-flex  justify-center items-center ">

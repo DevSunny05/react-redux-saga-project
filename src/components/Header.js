@@ -1,12 +1,15 @@
 import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const cartData = useSelector((state) => state.cartData);
  
   return (
-    <div className=" bg-gradient-to-r from-slate-900 to-slate-500 " style={{ height: "75px",  }}>
+    <div className=" bg-gradient-to-r from-slate-900 to-slate-500 flex align " style={{ height: "75px", alignItems:'center',justifyContent:'space-between'  }}>
+      <Link to='/'><h1 className=" m-2 text-3xl text-white">E-Commerce</h1></Link>
+      <Link to='/cart'>
       <div style={{ float: "right", margin: "25px", position: "relative" }}>
         <span
           style={{
@@ -30,6 +33,7 @@ const Header = () => {
         </span>
         <AiOutlineShoppingCart size={30} />
       </div>
+      </Link>
     </div>
   );
 };
