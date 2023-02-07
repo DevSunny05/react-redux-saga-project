@@ -5,11 +5,12 @@ export const cartData = (data = [], action) => {
   switch (action.type) {
     case ADD_TO_CART:
       // add to cart logic
-      return [...data, action.data];
+      return [ action.data,...data];
     case REMOVE_FROM_CART:
       // remove to cart logic
-      data.length=data.length ? data.length - 1 : [];
-      return [...data];
+      // data.length=data.length ? data.length - 1 : [];
+      const remaingItems=data.filter(item=>item.id !== action.data)
+      return [...remaingItems];
 
     case EMPTY_CART:
       // remove to cart logic

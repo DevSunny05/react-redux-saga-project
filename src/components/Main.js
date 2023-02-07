@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart, emptyCart } from "../redux/action";
 import { productList } from "../redux/productAction";
@@ -8,24 +8,17 @@ const Main = () => {
   let data = useSelector((state) => state.productData);
   console.log(data);
 
-//   useEffect(()=>{
-//     dispatch(productList())
-//   },[])
+  useEffect(()=>{
+    dispatch(productList())
+  },[])
 
-  const product = {
-    name: "phone",
-    type: "mobile",
-    price: 1000000,
-    color: "red",
-  };
+  
   return (
     <>
       <div className="d-flex ">
        
         <button onClick={() => dispatch(emptyCart())}>Empty cart</button>
-        <button onClick={() => dispatch(productList())}>
-          Get Product List
-        </button>
+
       </div>
       <div className="container d-flex  justify-center items-center ">
         {data.map((item) => (
@@ -37,8 +30,8 @@ const Main = () => {
             <div>Category: {item.category}</div>
             <div>Price: {item.price}</div>
             <div className="d-flex flex-col items-center justify-center w-full">
-                <button onClick={() => dispatch(addToCart(product))} className="mx-auto  my-2 px-4 py-1 bg-cyan-700 rounded text-white w-40">Add To Cart</button>
-                <button onClick={() => dispatch(removeFromCart(product.name))} className="mx-auto my-2 px-4 py-1 bg-cyan-700 rounded text-white w-40">Remove To Cart</button>
+                <button onClick={() => dispatch(addToCart(item))} className="mx-auto  my-2 px-4 py-1 bg-cyan-700 rounded text-white w-40">Add To Cart</button>
+                <button onClick={() => dispatch(removeFromCart(item.id))} className="mx-auto my-2 px-4 py-1 bg-cyan-700 rounded text-white w-40">Remove To Cart</button>
             </div>
           </div>
         ))}
