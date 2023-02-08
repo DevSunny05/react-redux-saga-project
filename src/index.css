@@ -12,6 +12,12 @@
   min-height: 500px;
   height: fit-content;
   
+}
 
+.cartItem-container table td{
+  border: 1px solid #ccc;
+  padding: 15px;
+  
+  
 }
 
